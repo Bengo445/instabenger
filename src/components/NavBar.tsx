@@ -3,7 +3,7 @@
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
-export const metadata = { title: "About me | Instabenger"}
+export const metadata = { title: "Navbar | Instabenger"}
 
 export default function Navbar() {
   return (
