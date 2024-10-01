@@ -1,5 +1,5 @@
 Meno: Samuel Bončo
-Trieda: IV.B 1.sk.
+Trieda: IV.B 1.skup.
 
 
 
@@ -17,12 +17,12 @@ git init – inicializuje lokalny git repo
 git config – nastavenie git
 	git config --global user.name <github meno>
 	git config --global user.email <github email>
-git remote add origin <github link> - prepojenie ku github
-git commit -m <správa commitu> - vytvorý breakpoint so správou 
+git remote add origin (github link) - prepojenie ku github
+git commit -m (správa commitu) - vytvorý breakpoint so správou 
 
 
 
-PROJEKT
+NEXT.js PROJEKT
 /src folder – hlavná položka projektu
 /src/app – obsahuje hlavnu page a podstranky
 
