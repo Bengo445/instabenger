@@ -8,6 +8,6 @@ export default function Home() {
   return (
 
       <Typography>Home</Typography>
-    
+      
   );
 }
