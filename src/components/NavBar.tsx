@@ -7,12 +7,16 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
 import PostIcon from '@mui/icons-material/AddToPhotos';
 import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
+import ProfileIcon from '@mui/icons-material/Person';
 import RegisterIcon from '@mui/icons-material/AppRegistration';
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 export default function NavBar() {
   const [value, setValue] = React.useState(0);
   const router = useRouter();
+  const { data: session, status } = useSession();
 
   const handleNavigation = (newValue: number, path: string) => {
     setValue(newValue);
@@ -35,16 +39,35 @@ export default function NavBar() {
           icon={<PostIcon />} 
           onClick={() => handleNavigation(1, '/post')} 
         />
-        <BottomNavigationAction 
-          label="Registrácia" 
-          icon={<RegisterIcon />} 
-          onClick={() => handleNavigation(2, '/auth/register')} 
-        />
-        <BottomNavigationAction 
-          label="Prihlásenie" 
-          icon={<LoginIcon />} 
-          onClick={() => handleNavigation(3, '/auth/login')} 
-        />
+
+        {!session ? (
+          <BottomNavigationAction 
+              label="Registrácia" 
+              icon={<RegisterIcon />} 
+              onClick={() => handleNavigation(2, '/auth/registracia')} 
+          /> 
+        ) : (
+          <BottomNavigationAction 
+              label="Profil" 
+              icon={<ProfileIcon />} 
+              onClick={() => handleNavigation(2, '/profile')} 
+          />
+        )}
+
+        {!session ? (
+          <BottomNavigationAction 
+              label="Prihlásenie" 
+              icon={<LoginIcon />} 
+              onClick={() => handleNavigation(3, '/auth/prihlasenie')} 
+          />
+        ) : (
+          <BottomNavigationAction 
+              label="Odhlásenie" 
+              icon={<LogoutIcon />} 
+              onClick={() => handleNavigation(3, '/auth/odhlasenie')} 
+          />
+        )}
+        
       </BottomNavigation>
     </Box>
   );
