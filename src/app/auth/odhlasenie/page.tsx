@@ -1,7 +1,7 @@
 'use client'; // This page should be client-side
 
 import { signOut } from 'next-auth/react';
-import { Button, Container, Typography, Box } from '@mui/material';
+import { Button, Container } from '@mui/material';
 import { useRouter } from 'next/navigation';
 
 export default function LogoutPage() {

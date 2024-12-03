@@ -16,7 +16,7 @@ import { useSession } from 'next-auth/react';
 export default function NavBar() {
   const [value, setValue] = React.useState(0);
   const router = useRouter();
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   const handleNavigation = (newValue: number, path: string) => {
     setValue(newValue);
