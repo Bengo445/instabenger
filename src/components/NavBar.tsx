@@ -49,7 +49,7 @@ export default function NavBar() {
         ) : (
           <BottomNavigationAction 
               label="Profil" 
-              icon={<Avatar src = {session.user?.email || ""}></Avatar>} 
+              icon={<Avatar src = {session.user?.image || ""} />}
               onClick={() => handleNavigation(2, '/profile')} 
           />
         )}
