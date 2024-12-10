@@ -8,10 +8,10 @@ import HomeIcon from '@mui/icons-material/Home';
 import PostIcon from '@mui/icons-material/AddToPhotos';
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
-import ProfileIcon from '@mui/icons-material/Person';
 import RegisterIcon from '@mui/icons-material/AppRegistration';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
+import { Avatar } from '@mui/material';
 
 export default function NavBar() {
   const [value, setValue] = React.useState(0);
@@ -49,7 +49,7 @@ export default function NavBar() {
         ) : (
           <BottomNavigationAction 
               label="Profil" 
-              icon={<ProfileIcon />} 
+              icon={<Avatar src = {session.user?.email || ""}></Avatar>} 
               onClick={() => handleNavigation(2, '/profile')} 
           />
         )}
